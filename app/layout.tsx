@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { SideDock } from "@/components/SideDock";
+import { BackToTop } from "@/components/ui/BackToTop";
 import { GlowBackground } from "@/components/ui/GlowBackground";
 import { profile } from "@/content/profile";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         <GlowBackground />
         <SideDock />
         {children}
+        <BackToTop />
       </body>
     </html>
   );
