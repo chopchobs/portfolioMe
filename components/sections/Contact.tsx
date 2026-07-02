@@ -1,7 +1,8 @@
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { profile } from "@/content/profile";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Contact() {
@@ -46,28 +47,7 @@ export function Contact() {
             <Button href={`mailto:${profile.email}`}>
               <Mail size={16} /> Send a message
             </Button>
-            {profile.github ? (
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="text-slate hover:text-clay"
-              >
-                <Github size={22} />
-              </a>
-            ) : null}
-            {profile.linkedin ? (
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-slate hover:text-clay"
-              >
-                <Linkedin size={22} />
-              </a>
-            ) : null}
+            <SocialLinks github={profile.github} linkedin={profile.linkedin} />
           </div>
         </Reveal>
 

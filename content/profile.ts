@@ -4,9 +4,8 @@ export const profile = {
   location: "Phetchabun, Thailand",
   email: "chopchat.dev@gmail.com",
   phone: "091-0303399",
-  // TODO: add real URLs when available
-  github: "",
-  linkedin: "",
+  github: "https://github.com/chopchobs",
+  linkedin: "https://www.linkedin.com/in/nattapon-sopontanapat-8b98832a5/",
   resumeUrl: "/Nattapon_Sopontanapat_Resume.pdf",
   // set to "/images/profile.jpg" when the photo is added; empty shows the initials placeholder
   image: "",

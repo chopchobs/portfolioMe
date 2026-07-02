@@ -4,6 +4,7 @@ import { ArrowDown, Download } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { profile } from "@/content/profile";
 import { Button } from "@/components/ui/Button";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { SmartImage } from "@/components/ui/SmartImage";
 
 export function Hero() {
@@ -97,13 +98,17 @@ export function Hero() {
             {profile.tagline}
           </motion.p>
 
-          <motion.div variants={item} className="mt-12 flex flex-wrap gap-4">
+          <motion.div
+            variants={item}
+            className="mt-12 flex flex-wrap items-center gap-4"
+          >
             <Button href="#projects">
               View my work <ArrowDown size={16} />
             </Button>
             <Button href={profile.resumeUrl} variant="secondary" external>
               Download resume <Download size={16} />
             </Button>
+            <SocialLinks github={profile.github} linkedin={profile.linkedin} />
           </motion.div>
         </div>
       </motion.div>
