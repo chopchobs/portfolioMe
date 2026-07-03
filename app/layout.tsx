@@ -18,13 +18,11 @@ const inter = Inter({
   display: "swap",
 });
 
-// Resolve the canonical origin: explicit env first, then Vercel's injected
-// production URL, then localhost for dev. No hard-coded fake domain.
+// Resolve the canonical origin: explicit env first, then the live
+// production domain as the default fallback.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000";
+  : "https://nattapon-dev.vercel.app";
 
 const title = `${profile.name} — ${profile.role}`;
 
