@@ -71,6 +71,9 @@ function Visual({ project, className }: { project: Project; className?: string }
             ? "(max-width:1024px) 100vw, 520px"
             : "(max-width:1024px) 100vw, 500px"
         }
+        // Featured screenshots are wide (~1.93); top-align the crop so the
+        // browser chrome / header stays visible instead of zooming the center.
+        className={project.featured ? "object-top" : undefined}
         fallback={<ProjectMark mark={project.mark} label={project.tagline} />}
       />
     </div>
@@ -96,7 +99,11 @@ export function ProjectCard({
       <article className="group grid overflow-hidden rounded-xl border border-border bg-surface/60 transition-colors duration-300 hover:border-clay lg:grid-cols-2">
         <Visual
           project={project}
-          className={`min-h-[240px] lg:min-h-[420px] ${flip ? "lg:order-2" : ""}`}
+          // Match the screenshot's landscape ratio instead of stretching to the
+          // text height (which cropped the wide screenshots too hard). On mobile
+          // the image stays on top (self-start); on desktop it centers vertically
+          // (lg:self-center) so the leftover space splits evenly above/below.
+          className={`aspect-[16/10] w-full self-start lg:self-center ${flip ? "lg:order-2" : ""}`}
         />
         <div className="flex flex-col p-6 sm:p-8 lg:p-10">
           <p className="text-sm font-medium text-clay">{tagline}</p>

@@ -8,7 +8,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/nattapon-sopontanapat-8b98832a5/",
   resumeUrl: "/Nattapon_Sopontanapat_Resume.pdf",
   // set to "/images/profile.jpg" when the photo is added; empty shows the initials placeholder
-  image: "",
+  image: "/images/profile.jpg",
   tagline:
     "Self-taught full-stack developer — TypeScript-first, production-grade apps with Next.js and the PERN stack.",
   story: [

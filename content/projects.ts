@@ -25,6 +25,7 @@ export const projects: Project[] = [
     tagline: "Multi-Tenant B2B Help Desk SaaS",
     mark: "Hw",
     featured: true,
+    image: "/images/helpwise.png",
     description:
       "A production multi-tenant help desk SaaS with subdomain-per-tenant isolation, two separate audiences (agent workspace + customer portal), AI-assisted triage, and business-hours SLA tracking — live with two explorable demo workspaces.",
     tech: [
@@ -47,7 +48,7 @@ export const projects: Project[] = [
     ],
     links: {
       live: "https://gethelpwise.xyz",
-      github: "",
+      github: "https://github.com/chopchobs/Helpwise",
     },
   },
   {
@@ -56,6 +57,7 @@ export const projects: Project[] = [
     tagline: "Enterprise procurement, end to end",
     mark: "B2B",
     featured: true,
+    image: "/images/b2b-supply-chain.png",
     description:
       "An enterprise-grade B2B procurement platform covering the full supply chain lifecycle — purchase orders, multi-role fulfillment, supplier coordination, invoicing, and analytics — with zero runtime type errors in production.",
     tech: [
@@ -76,8 +78,8 @@ export const projects: Project[] = [
       "Normalized 5-entity schema with a 4-stage order lifecycle and multi-role RBAC secured at the server-action level.",
     ],
     links: {
-      live: "",
-      github: "",
+      live: "https://b2b-wholesale-supply-chain.vercel.app",
+      github: "https://github.com/chopchobs/B2B-Wholesale-Supply-Chain",
     },
   },
   {
@@ -86,6 +88,7 @@ export const projects: Project[] = [
     tagline: "Secure B2B catalog CMS",
     mark: "EV",
     featured: false,
+    image: "/images/ev-catalog.png",
     description:
       "A production-ready B2B EV car catalog with a secure CMS — containerized with a hardened multi-stage Docker setup and deployed to Vercel with zero-downtime releases.",
     tech: ["Next.js 15", "Prisma ORM", "Supabase", "Zod", "Tailwind CSS", "Docker"],
@@ -96,8 +99,8 @@ export const projects: Project[] = [
       "Multi-stage Docker build with non-root user execution and optimized image layers.",
     ],
     links: {
-      live: "",
-      github: "",
+      live: "https://ev-car-catalog.vercel.app",
+      github: "https://github.com/chopchobs/ev-car-catalog",
     },
   },
   {
@@ -106,6 +109,7 @@ export const projects: Project[] = [
     tagline: "Decoupled B2C, discovery to payment",
     mark: "EC",
     featured: false,
+    image: "/images/ecommerce-marketplace.png",
     description:
       "A full-stack B2C e-commerce platform with a decoupled client/server architecture — demonstrating RESTful API design distinct from Next.js Server Actions, supporting the complete shopping lifecycle from discovery to payment.",
     tech: [
@@ -126,9 +130,8 @@ export const projects: Project[] = [
       "Multi-service production deployment: frontend on Vercel, backend on Render, media on Cloudinary.",
     ],
     links: {
-      live: "",
-      github: "",
-      api: "",
+      live: "https://e-commerce-market-place-nine.vercel.app",
+      github: "https://github.com/chopchobs/e-commerce-market-place",
     },
   },
 ];
