@@ -1,13 +1,12 @@
 "use client";
 
-import { Home, User, Briefcase, Star, FolderGit2, Mail } from "lucide-react";
+import { Home, User, Briefcase, FolderGit2, Mail } from "lucide-react";
 import { useActiveSection } from "@/lib/useActiveSection";
 
 const items = [
   { id: "hero", label: "Home", Icon: Home },
   { id: "about", label: "About", Icon: User },
   { id: "experience", label: "Experience", Icon: Briefcase },
-  { id: "highlights", label: "Highlights", Icon: Star },
   { id: "projects", label: "Projects", Icon: FolderGit2 },
   { id: "contact", label: "Contact", Icon: Mail },
 ];

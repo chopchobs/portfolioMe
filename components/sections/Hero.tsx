@@ -31,7 +31,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-28 sm:py-32"
+      className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-28 sm:py-32"
     >
       <motion.div
         variants={container}
@@ -50,9 +50,15 @@ export function Hero() {
             sizes="(max-width:1024px) 100vw, 22rem"
             priority
             fallback={
-              <div className="flex h-full w-full items-center justify-center bg-sage">
+              <div className="relative flex h-full w-full flex-col items-center justify-center gap-4 bg-sage">
+                <span className="pointer-events-none absolute left-5 top-5 h-9 w-9 border-l border-t border-ink/15" />
+                <span className="pointer-events-none absolute bottom-5 right-5 h-9 w-9 border-b border-r border-ink/15" />
                 <span className="font-serif text-7xl font-normal text-ink">
                   NS
+                </span>
+                <span className="h-px w-10 bg-clay" />
+                <span className="text-xs uppercase tracking-widest text-ink/60">
+                  Nattapon
                 </span>
               </div>
             }
@@ -112,6 +118,18 @@ export function Hero() {
           </motion.div>
         </div>
       </motion.div>
+
+      <motion.a
+        href="#about"
+        aria-label="Scroll to about section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: reduce ? 0 : 1, duration: reduce ? 0 : 0.6 }}
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs uppercase tracking-widest text-warm-gray transition-colors hover:text-clay lg:inline-flex"
+      >
+        Scroll
+        <ArrowDown size={14} className="motion-safe:animate-bounce" />
+      </motion.a>
     </section>
   );
 }

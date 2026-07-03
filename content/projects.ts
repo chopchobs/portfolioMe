@@ -2,6 +2,8 @@ export type Project = {
   slug: string;
   title: string;
   tagline: string;
+  /** Short monogram used by the branded card panel when no screenshot exists. */
+  mark: string;
   featured: boolean;
   description: string;
   image?: string;
@@ -21,6 +23,7 @@ export const projects: Project[] = [
     slug: "helpwise",
     title: "Helpwise",
     tagline: "Multi-Tenant B2B Help Desk SaaS",
+    mark: "Hw",
     featured: true,
     description:
       "A production multi-tenant help desk SaaS with subdomain-per-tenant isolation, two separate audiences (agent workspace + customer portal), AI-assisted triage, and business-hours SLA tracking — live with two explorable demo workspaces.",
@@ -51,6 +54,7 @@ export const projects: Project[] = [
     slug: "b2b-supply-chain",
     title: "B2B Wholesale & Supply Chain Platform",
     tagline: "Enterprise procurement, end to end",
+    mark: "B2B",
     featured: true,
     description:
       "An enterprise-grade B2B procurement platform covering the full supply chain lifecycle — purchase orders, multi-role fulfillment, supplier coordination, invoicing, and analytics — with zero runtime type errors in production.",
@@ -80,6 +84,7 @@ export const projects: Project[] = [
     slug: "ev-catalog",
     title: "EV Car Catalog & Admin Dashboard",
     tagline: "Secure B2B catalog CMS",
+    mark: "EV",
     featured: false,
     description:
       "A production-ready B2B EV car catalog with a secure CMS — containerized with a hardened multi-stage Docker setup and deployed to Vercel with zero-downtime releases.",
@@ -99,6 +104,7 @@ export const projects: Project[] = [
     slug: "ecommerce-marketplace",
     title: "E-Commerce Marketplace Platform",
     tagline: "Decoupled B2C, discovery to payment",
+    mark: "EC",
     featured: false,
     description:
       "A full-stack B2C e-commerce platform with a decoupled client/server architecture — demonstrating RESTful API design distinct from Next.js Server Actions, supporting the complete shopping lifecycle from discovery to payment.",

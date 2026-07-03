@@ -6,16 +6,9 @@ export type TimelineItem = {
   points: string[];
 };
 
+// Ordered most-recent first, leading with the work most relevant to a
+// development role.
 export const experience: TimelineItem[] = [
-  {
-    period: "2022 – Present",
-    title: "Family Business Operation (Freelance / Manager)",
-    org: "Heavy Vehicle Parts Business",
-    kind: "work",
-    points: [
-      "Managed daily operations, procurement, and financial records — experience that shaped a data-driven approach to inventory systems and a real understanding of supply chain workflows that directly informed the B2B platform project.",
-    ],
-  },
   {
     period: "Oct 2024 – Present",
     title: "Independent Study & Professional Development",
@@ -27,13 +20,12 @@ export const experience: TimelineItem[] = [
     ],
   },
   {
-    period: "2020 – 2021",
-    title: "Internship Trainee (F&B)",
-    org: "Grand Mercure, Avani",
+    period: "2022 – Present",
+    title: "Family Business Operation (Freelance / Manager)",
+    org: "Heavy Vehicle Parts Business",
     kind: "work",
     points: [
-      "Collaborated with the team to ensure high standards of customer service.",
-      "Developed strong communication and time management under pressure.",
+      "Managed daily operations, procurement, and financial records — experience that shaped a data-driven approach to inventory systems and a real understanding of supply chain workflows that directly informed the B2B platform project.",
     ],
   },
   {
@@ -42,5 +34,15 @@ export const experience: TimelineItem[] = [
     org: "Assumption University (ABAC), Bangkok",
     kind: "education",
     points: ["International Program."],
+  },
+  {
+    period: "2020 – 2021",
+    title: "Internship Trainee (F&B)",
+    org: "Grand Mercure, Avani",
+    kind: "work",
+    points: [
+      "Collaborated with the team to ensure high standards of customer service.",
+      "Developed strong communication and time management under pressure.",
+    ],
   },
 ];
