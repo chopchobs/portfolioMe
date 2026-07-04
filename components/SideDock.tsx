@@ -2,6 +2,7 @@
 
 import { Home, User, Briefcase, FolderGit2, Mail } from "lucide-react";
 import { useActiveSection } from "@/lib/useActiveSection";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const items = [
   { id: "hero", label: "Home", Icon: Home },
@@ -45,6 +46,7 @@ export function SideDock() {
           </a>
         );
       })}
+      <ThemeToggle />
     </nav>
   );
 }

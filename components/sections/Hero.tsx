@@ -81,7 +81,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mb-4 text-sm font-medium uppercase tracking-widest text-clay"
+            className="mb-4 text-sm font-medium uppercase tracking-widest text-clay-text"
           >
             Hello, I&apos;m
           </motion.p>

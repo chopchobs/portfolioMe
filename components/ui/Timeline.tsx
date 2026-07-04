@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 import { Briefcase, GraduationCap } from "lucide-react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import type { TimelineItem } from "@/content/experience";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function Timeline({ items }: { items: TimelineItem[] }) {
+  const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -27,7 +28,7 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
       />
       <motion.div
         aria-hidden="true"
-        style={{ scaleY }}
+        style={{ scaleY: reduce ? 1 : scaleY }}
         className="absolute left-0 top-0 h-full w-px origin-top bg-clay"
       />
 
@@ -41,7 +42,7 @@ export function Timeline({ items }: { items: TimelineItem[] }) {
               </span>
               <p className="text-sm text-warm-gray">{item.period}</p>
               <h3 className="mt-1 text-lg font-normal">{item.title}</h3>
-              <p className="text-sm text-clay">{item.org}</p>
+              <p className="text-sm text-clay-text">{item.org}</p>
               <ul className="mt-3 space-y-2">
                 {item.points.map((p, j) => (
                   <li key={j} className="text-slate">

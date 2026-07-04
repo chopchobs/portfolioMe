@@ -7,6 +7,13 @@
   --color-sage: #d6d3be;
   --color-clay: #c6613f;
   --color-clay-hover: #a94e30;
+  /* AA-safe clay for small text on page/card surfaces (tuned per theme) */
+  --color-clay-text: #9e4a2c;
+  /* AA-safe clay button surface — constant across themes (paired with ivory text) */
+  --color-clay-strong: #a94e30;
+  --color-clay-strong-hover: #8f3f26;
+  /* Constant ivory text used on clay buttons in both themes */
+  --color-on-clay: #faf9f5;
   --color-ink: #141413;
   --color-slate: #5e5d59;
   --color-warm-gray: #6f6b60;
@@ -16,12 +23,33 @@
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
+:root[data-theme="dark"] {
+  --color-bg: #1a1a19;
+  --color-surface: #262625;
+  --color-surface-warm: #33322f;
+  --color-sage: #3d3b33;
+  --color-clay: #c6613f;
+  --color-clay-hover: #d6774f;
+  /* clay text must lighten in dark mode to keep >=4.5 on dark surfaces */
+  --color-clay-text: #e08a63;
+  --color-ink: #faf9f5;
+  --color-slate: #a8a6a0;
+  --color-warm-gray: #9c978b;
+  --color-border: #33322f;
+}
+
 * {
   border-color: var(--color-border);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

@@ -48,7 +48,7 @@ export function About() {
                 key={group.category}
                 className="grid gap-3 sm:grid-cols-4 sm:items-baseline"
               >
-                <p className="text-sm font-medium text-clay">
+                <p className="text-sm font-medium text-clay-text">
                   {group.category}
                 </p>
                 <div className="flex flex-wrap gap-2 sm:col-span-3">

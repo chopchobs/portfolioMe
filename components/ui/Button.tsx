@@ -18,7 +18,7 @@ export function Button({
     "inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay";
   const styles =
     variant === "primary"
-      ? "bg-clay text-bg hover:bg-clay-hover"
+      ? "bg-clay-strong text-on-clay hover:bg-clay-strong-hover"
       : "border border-border bg-transparent text-ink hover:bg-surface";
 
   const rel = external ? "noopener noreferrer" : undefined;

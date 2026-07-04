@@ -23,7 +23,7 @@ function ProjectLinks({ links }: { links: Project["links"] }) {
           href={links.live}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-clay hover:text-clay-hover"
+          className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-clay-text hover:text-clay-hover"
         >
           Live demo
           <ArrowUpRight
@@ -106,7 +106,7 @@ export function ProjectCard({
           className={`aspect-[16/10] w-full self-start lg:self-center ${flip ? "lg:order-2" : ""}`}
         />
         <div className="flex flex-col p-6 sm:p-8 lg:p-10">
-          <p className="text-sm font-medium text-clay">{tagline}</p>
+          <p className="text-sm font-medium text-clay-text">{tagline}</p>
           <h3 className="mt-1.5 font-serif text-2xl font-normal sm:text-3xl">
             {title}
           </h3>
@@ -143,7 +143,7 @@ export function ProjectCard({
     <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface/60 transition-all duration-300 hover:-translate-y-1 hover:border-clay motion-reduce:transition-none motion-reduce:hover:translate-y-0">
       <Visual project={project} className="aspect-[16/9] w-full" />
       <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <p className="text-sm font-medium text-clay">{tagline}</p>
+        <p className="text-sm font-medium text-clay-text">{tagline}</p>
         <h3 className="mt-1.5 font-serif text-xl font-normal sm:text-2xl">{title}</h3>
         <p className="mt-3 text-sm leading-relaxed text-slate">{description}</p>
 

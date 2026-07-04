@@ -5,6 +5,7 @@ import { SideDock } from "@/components/SideDock";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { GlowBackground } from "@/components/ui/GlowBackground";
 import { profile } from "@/content/profile";
+import { Analytics } from "@vercel/analytics/next";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -94,17 +95,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
       <body>
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");document.documentElement.dataset.theme=(t==="dark"||t==="light")?t:(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        <a
+          href="#main-content"
+          className="sr-only rounded-lg bg-clay-strong px-4 py-2 text-sm font-medium text-on-clay focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
+        >
+          Skip to content
+        </a>
         <GlowBackground />
         <SideDock />
         {children}
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
