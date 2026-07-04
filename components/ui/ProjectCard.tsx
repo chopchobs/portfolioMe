@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Github, ArrowUpRight, FileText } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { SkillPill } from "./SkillPill";
@@ -57,6 +58,17 @@ function ProjectLinks({ links }: { links: Project["links"] }) {
         </a>
       ) : null}
     </div>
+  );
+}
+
+function CaseStudyLink({ slug }: { slug: string }) {
+  return (
+    <Link
+      href={`/projects/${slug}`}
+      className="text-sm font-medium text-clay-text hover:text-clay-hover"
+    >
+      Read case study →
+    </Link>
   );
 }
 
@@ -130,7 +142,8 @@ export function ProjectCard({
             ))}
           </div>
 
-          <div className="mt-8 flex">
+          <div className="mt-8 flex flex-col gap-3">
+            <CaseStudyLink slug={project.slug} />
             <ProjectLinks links={project.links} />
           </div>
         </div>
@@ -153,7 +166,10 @@ export function ProjectCard({
           ))}
         </div>
 
-        <ProjectLinks links={project.links} />
+        <div className="mt-auto flex flex-col gap-3">
+          <CaseStudyLink slug={project.slug} />
+          <ProjectLinks links={project.links} />
+        </div>
       </div>
     </article>
   );
