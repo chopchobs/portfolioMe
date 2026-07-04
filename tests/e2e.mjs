@@ -106,7 +106,16 @@ try {
   await page.goto(`${BASE}/`, { waitUntil: "networkidle" });
   await settle(page);
   await revealAll(page);
-  await page.getByText("Read case study").first().click();
+  // Anti-flake: ensure the Link is actually mounted, visible and in view before
+  // clicking, and give hydration a brief settle so the click is handled by the
+  // Next.js router (not a full page load / dropped event) on a cold CI runner.
+  const caseStudyLink = page.getByText("Read case study").first();
+  await caseStudyLink.waitFor({ state: "visible", timeout: 15_000 });
+  await caseStudyLink.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(300);
+  await caseStudyLink.click();
+  // Wait for the client-side navigation to complete before asserting the URL.
+  await page.waitForURL("**/projects/helpwise", { timeout: 15_000 });
   await settle(page);
   {
     const pathname = new URL(page.url()).pathname;
@@ -117,9 +126,14 @@ try {
 
   // --- Flow 2: case study -> back to projects ----------------------------
   console.log("\nFlow 2 — case study → back to projects:");
-  await page.getByText("Back to projects").first().click();
+  // Same anti-flake guard: ensure the back link is interactive before clicking.
+  const backLink = page.getByText("Back to projects").first();
+  await backLink.waitFor({ state: "visible", timeout: 15_000 });
+  await backLink.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(300);
+  await backLink.click();
   // Client-side nav to "/#projects" — wait for the frame URL to actually change.
-  await page.waitForURL((url) => url.pathname === "/", { timeout: 10_000 });
+  await page.waitForURL((url) => url.pathname === "/", { timeout: 15_000 });
   await settle(page);
   {
     const u = new URL(page.url());
