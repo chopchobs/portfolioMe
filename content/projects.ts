@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "Vitest",
     ],
     highlights: [
-      "Subdomain→tenant resolution at the edge with Redis-cached lookups; a Prisma client extension auto-injects tenantId into every query, with PostgreSQL RLS as a DB-level backstop.",
+      "Subdomain→tenant resolution at the edge with Redis-cached lookups; a Prisma client extension auto-injects tenantId into every query, isolation enforced at the application layer; PostgreSQL RLS scaffolded as defense-in-depth.",
       "Dual-audience auth: separated agent and customer guards with distinct JWT audiences and cookies — internal notes never leak to the customer portal (enforced at query level, not UI).",
       "Concurrency-safe ticketing via row-locked counters and idempotent outbound email to eliminate double-sends under queue retries.",
       "Signature-verified, fail-closed QStash workers for outbound email and SLA-breach sweeps; idempotent Stripe billing with a unique-event ledger.",
